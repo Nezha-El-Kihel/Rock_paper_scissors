@@ -1,7 +1,7 @@
 window.onload = section_body_height;
 function section_body_height(){
-	if (document.documentElement.scrollHeight < 750) {
-		document.body.style.height = "750px";
+	if (document.documentElement.scrollHeight <= 800) {
+		document.body.style.height = "800px";
 		section_height_();
 	} else {
 		document.body.style.height = "100vh";
@@ -10,7 +10,7 @@ function section_body_height(){
 }
 function section_height_() {
     var height_body = document.documentElement.scrollHeight;
-	if(document.documentElement.scrollWidth <600 && document.documentElement.scrollWidth >400) {
+	if(document.documentElement.scrollWidth <600 ) {
 		var height_section = height_body - 141 - 50;
 	} else {
 		var height_section = height_body - 141;
@@ -87,7 +87,7 @@ for (var i = 0; i < btn.length ; i++) {
 				document.querySelectorAll(".draw_msg")[1].style.display = "none";
 				document.querySelectorAll(".win_msg")[0].style.display = "block";
 				document.querySelectorAll(".win_msg")[1].style.display = "block";
-				if(document.documentElement.scrollWidth <600 && document.documentElement.scrollWidth >400) {
+				if(document.documentElement.scrollWidth <600 ) {
 					document.querySelectorAll(".result")[0].style.display = "table-cell";
 					document.querySelectorAll(".result")[1].style.display = "none";
 					document.querySelector(".result_mobile").style.display = "table-cell";
@@ -120,7 +120,7 @@ for (var i = 0; i < btn.length ; i++) {
 				document.querySelectorAll(".draw_msg")[1].style.display = "none";
 				document.querySelectorAll(".lose_msg")[0].style.display = "block";
 				document.querySelectorAll(".lose_msg")[1].style.display = "block";
-				if(document.documentElement.scrollWidth <600 && document.documentElement.scrollWidth >400) {
+				if(document.documentElement.scrollWidth <600 ) {
 					document.querySelectorAll(".result")[0].style.display = "table-cell";
 					document.querySelectorAll(".result")[1].style.display = "none";
 					document.querySelector(".result_mobile").style.display = "table-cell";
@@ -141,7 +141,7 @@ for (var i = 0; i < btn.length ; i++) {
 			document.querySelectorAll(".win_msg")[1].style.display = "none";
 			document.querySelectorAll(".draw_msg")[0].style.display = "block";
 			document.querySelectorAll(".draw_msg")[1].style.display = "block";
-			if(document.documentElement.scrollWidth <600 && document.documentElement.scrollWidth >400) {
+			if(document.documentElement.scrollWidth <600 ) {
 					document.querySelectorAll(".result")[0].style.display = "table-cell";
 					document.querySelectorAll(".result")[1].style.display = "none";
 					document.querySelector(".result_mobile").style.display = "table-cell";
