@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	list-style: none;
+	box-sizing: border-box;
+	/*overflow: hidden;*/
+}
+body{
+	height: 100vh;
+	width: 100%;
+	font-family: 'Barlow Semi Condensed', 'sans-serif';
+	background-image: radial-gradient(at top center , hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
+	padding-top: 20px;
+}
+button{
+	cursor: pointer;
+}
+.mobile, .r_1, .r_3{
+	display: none;
+}
+.header{
+	width: 550px;
+	margin: 0 auto;
+	height: 121px;
+}
+.header header{
+	border: 3px solid hsl(217, 16%, 45%);
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+	/*margin-top: 20px;*/
+}
+.header h1{
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	line-height: 0.8;
+	font-size: 1.5rem;
+	color: #fff;
+}
+.header .score_container{
+	background-color: #fff;
+	padding: 10px 40px;
+	border-radius: 10px;
+	text-align: center;
+}
+.header .score_container p{
+	text-transform: uppercase;
+	color: hsl(229, 64%, 46%);
+}
+.header .score_container span{
+	font-size: 3rem;
+	font-weight: 700;
+	color: hsl(229, 25%, 31%);
+}
+.section{
+	width: 100%;
+	position: relative;
+}
+.section .section_1{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-wrap: wrap-reverse;
+	width: 400px;
+	height: 410px;
+	justify-content: center;
+	/*position: relative;*/
+	margin-bottom: 40px;
+	align-items: center;
+	margin: 0 auto;	
+}
+.section .section_1::after{
+	background-image: url('images/bg-pentagon.svg');
+	content: '';
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 70%;
+	height: 70%;
+	position: absolute;
+	top: 15%;
+	left: 13%;
+	z-index: -1;
+}
+.section .btn{
+	height: 130px;
+	width: 130px;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	box-shadow: inset 0 -6px rgba(0, 0, 0, 0.2);
+	margin: 0 20px;
+}
+.section .rock_btn{
+	background: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%));
+}
+.section .paper_btn{
+	background: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%));
+	margin-left: 70px;
+    margin-right: 0;
+    margin-bottom: 14px;
+}
+.section .scissors_btn{
+	background: linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%));
+}
+.section .spock_btn{
+	background: linear-gradient(hsl(189, 59%, 53%) , hsl(189, 58%, 57%));
+	margin-left: 0;
+    margin-right: 70px;
+    margin-bottom: 14px;
+}
+.section .lizard_btn{
+	background: linear-gradient(hsl(261, 73%, 60%) , hsl(261, 72%, 63%));
+}
+.section .btn .bg{
+	width: 100px;
+	height: 100px;
+	background-color: #fff;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: inset 0 6px rgba(0, 0, 0, 0.2);
+}
+.section .section_2{
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: inherit;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.section .section_2 table{
+	width: 72%;
+	margin: 0 auto;
+	text-transform: uppercase;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	color: #fff;
+	/*margin-top: 20px;*/
+}
+.section .section_2 .tb1 td{
+	width: 24%;
+	padding: 20px 0;
+}
+.section .section_2 .tb1 td .btn{
+	height: 180px;
+	width: 180px;
+}
+.section .section_2 .tb1 td .btn .bg{
+	width: 130px;
+	height: 130px;
+}
+.section .section_2 .paper_btn{
+	background: linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%));
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+.section .section_2 .spock_btn{
+	background: linear-gradient(hsl(189, 59%, 53%) , hsl(189, 58%, 57%));
+	margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+.section .result, .msg, 
+.section .result_mobile{
+	display: none;
+}
+.section .section_2 .tb1 .result, 
+.section .section_2 .tb2 .result_mobile{
+	font-size: 2rem;
+	font-weight: 700;
+}
+.section .play_again{
+	color: hsl(229, 25%, 31%);
+	font-weight: 700;
+	padding: 10px 40px;
+	text-transform: uppercase;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+}
+.rules_btn{
+	border: 2px solid hsl(217, 16%, 45%);
+	color: #fff;
+	border-radius: 10px;
+	background-color: transparent;
+	text-transform: uppercase;
+	font-family: inherit;
+	padding: 6px 25px;
+	letter-spacing: 2px;
+	font-size: 16px;
+	position: fixed;
+	bottom: 10px;
+	right: 30px;
+	outline: none;
+}
+.modal{
+  	display: none;  
+  	position: fixed; 
+  	z-index: 1; 
+  	left: 0;
+  	top: 0;
+  	width: 100%; 
+  	height: 100%; 
+  	overflow: auto; 
+  	background-color: rgb(0,0,0); 
+  	background-color: rgba(0,0,0,0.4); 
+}
+.modal .modal-content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  	background-color: #fefefe;
+  	margin: auto;
+  	padding: 10px 20px 30px 20px;
+  	border: none;
+  	width: 35%;
+  	border-radius: 5px;
+}
+.modal .desktop #image_rules{
+	width: 98%;
+}
+.modal .desktop .modal-content-header{
+	text-transform: uppercase;
+    font-size: 1.5rem;
+	font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+.modal .desktop .modal-content-header .rules{
+	color: hsl(229, 25%, 31%);
+}
+.modal .desktop .modal-content-header .close{
+	text-transform: uppercase;
+    font-size: 2rem;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	color: lightgray;
+	color: #aaaaaa;
+  	float: right;
+  	font-size: 28px;
+  	font-weight: bold;
+}
+.modal .desktop .modal-content-header .close:hover, 
+.modal .desktop .modal-content-header .close:focus {
+  	color: hsl(229, 25%, 31%);
+  	text-decoration: none;
+  	cursor: pointer;
+}
+@media (max-width: 800px){
+	.desktop{
+		display: none;
+	}
+	.mobile{
+		display: block;
+		width: 100%;
+	}
+	.header{
+		width: 90%;
+		margin: 0 auto;
+	}
+	.rules_btn{
+		position: relative;	
+		bottom: 20px;
+		right: -40%;
+		transform: translateY(40%);
+		width: 105.81px;
+	}
+	.modal{
+	  	padding-top: 0;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 0;
+	  	width: 100%;
+	  	height: inherit;
+	}
+	.modal .mobile{
+	  	border: none;
+	  	width: 100%;
+	  	height: 100%;
+	  	display: flex;
+	  	flex-direction: column;
+	  	justify-content: space-between;
+	  	align-items: center;
+	  	text-align: center;
+	}
+	.modal .mobile p
+	{
+		color: hsl(229, 25%, 31%);
+		text-transform: uppercase;
+		font-family: inherit;
+		letter-spacing: 2px;
+		font-size: 2rem;
+		font-weight: 700;
+		padding-top: 20px;
+	}
+	.modal .mobile .close{
+		outline: none;
+		border: none;
+		background-color: transparent;
+		font-size: 3rem;
+		font-weight: 500;
+	}
+	.modal .mobile #image_rules{
+		width: 90%;
+		height: 60%;
+	}
+}
